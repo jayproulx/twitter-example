@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.pollensoft</groupId>
+    <artifactId>twitter-example</artifactId>
+    <version>0.0</version>
+
+    <properties>
+        <brewed.folder>${project.basedir}/src/main/www/brewed</brewed.folder>
+        <deps.folder>${project.basedir}/src/main/www/deps</deps.folder>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Maven Repository Switchboard</name>
+            <layout>default</layout>
+            <url>http://repo1.maven.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <name>Maven Plugin Repository</name>
+            <url>http://repo1.maven.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${brewed.folder}</directory>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.lesscss</groupId>
+                <artifactId>lesscss-maven-plugin</artifactId>
+                <version>1.3.0</version>
+                <configuration>
+                    <sourceDirectory>src/main/www/styles</sourceDirectory>
+                    <outputDirectory>src/main/www/styles</outputDirectory>
+                    <compress>true</compress>
+                    <force>true</force>
+                    <lessJs>src/main/www/scripts-deps/less.js</lessJs>
+                    <includes>
+                        <include>all.less</include>
+                    </includes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.voltvoodoo</groupId>
+                <artifactId>brew</artifactId>
+                <version>0.2.10</version>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>optimize</goal>
+                        </goals>
+                        <configuration>
+                            <modules>
+                                <module>
+                                    <name>deps-brewed</name>
+                                </module>
+                                <module>
+                                    <name>index-brewed</name>
+                                    <exclude>
+                                        <exclude>deps-brewed</exclude>
+                                    </exclude>
+                                </module>
+                            </modules>
+                            <providePlugins>false</providePlugins>
+                        </configuration>
+                    </execution>
+                </executions>
+
+                <configuration>
+                    <optimizeSourceDir>${basedir}/src/main/www/js</optimizeSourceDir>
+                    <optimizedFileNameSuffix>false</optimizedFileNameSuffix>
+                    <optimizeOutputDir>${brewed.folder}</optimizeOutputDir>
+                    <optimizeBuildDir>${project.build.directory}/brew</optimizeBuildDir>
+                    <jsOptimizer>uglify</jsOptimizer>
+                    <!-- the optimization could be done by cq clientLib mechanism or: <jsOptimizer>none</jsOptimizer>
+                             - "uglify": uses UglifyJS to minify the code. - "closure": (default) uses
+                             Google's Closure Compiler in simple optimization - "closure.keepLines": Same
+                             as closure option, but keeps line returns in the minified files.- "none":
+                             no minification will be done. -->
+
+                    <minifyOnlyAggregatedFiles>false</minifyOnlyAggregatedFiles>
+                    <requireUrl>${deps.folder}/require-jquery</requireUrl>
+                    <paths>
+                        <underscore>${deps.folder}/underscore</underscore>
+                        <backbone>${deps.folder}/backbone</backbone>
+                        <text>${deps.folder}/text</text>
+
+                        <!-- jquery is in the require.js file -->
+                        <jquery>empty:</jquery>
+                    </paths>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

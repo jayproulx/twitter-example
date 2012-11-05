@@ -1,0 +1,5 @@
+# Intellij Idea Projects#
+#########################
+*.ipr
+*.iml
+*.iws
