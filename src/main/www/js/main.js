@@ -23,7 +23,7 @@ requirejs.config ( {
 	}
 } );
 
-requirejs ( [ "jquery", "underscore", "backbone", "TwitterExampleApp"],
+requirejs ( [ "jquery", "use!underscore", "use!backbone", "TwitterExampleApp"],
 
 	function ( $, _, Backbone, TwitterExampleApp )
 	{

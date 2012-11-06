@@ -13,6 +13,7 @@
 	-->
 
 	<link href="deps/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="style/main.css" rel="stylesheet">
 
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -32,24 +33,11 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</a>
-			<a class="brand" href="#">Project name</a>
+			<a class="brand" href="#">Twitter Example</a>
+
 			<div class="nav-collapse collapse">
 				<ul class="nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#contact">Contact</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li class="divider"></li>
-							<li class="nav-header">Nav header</li>
-							<li><a href="#">Separated link</a></li>
-							<li><a href="#">One more separated link</a></li>
-						</ul>
-					</li>
+					<li><a href="http://www.pollensoft.com" target="_blank">About the author</a></li>
 				</ul>
 				<form id="LoginView" class="navbar-form pull-right" onsubmit="return false;">
 					<div class="input-prepend input-append">
@@ -58,7 +46,7 @@
 						<button type="submit" class="signin btn">Sign in</button>
 					</div>
 				</form>
-			</div><!--/.nav-collapse -->
+			</div>
 		</div>
 	</div>
 </div>
@@ -66,22 +54,52 @@
 <div class="container">
 
 	<!-- Main hero unit for a primary marketing message or call to action -->
-	<div class="hero-unit">
-		<h1>Hello, world!</h1>
-		<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-		<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+	<div id="HeroView">
+		<div class="hero-unit default">
+			<h1>Twitter Example</h1>
+
+			<p>
+				This is an example Twitter application that pretends to be authenticated while you use it. "Login" with
+				your twitter handle in the top right corner, and we'll fetch your profile and make it look like you're
+				logged in. Browse your "timeline" (a collection of HTML5 tweets), and view your latest tweets.
+			</p>
+		</div>
+
+		<div class="hero-unit user">
+			<h1>
+				<span class="name"></span>
+				<small class="handle"></small>
+			</h1>
+			<p class="profile"></p>
+
+			<p class="location-and-url">
+				<span class="location"></span>
+
+				<span class="divider">·</span>
+
+				<a target="_blank" class="url"></a>
+			</p>
+		</div>
 	</div>
 
 	<!-- Example row of columns -->
 	<div class="row">
-		<div class="span4">
+		<div class="span3">
 			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+
+			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+				condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
+				euismod. Donec sed odio dui. </p>
+
 			<p><a class="btn" href="#">View details &raquo;</a></p>
 		</div>
-		<div class="span8">
+		<div class="span9">
 			<h2>Heading</h2>
-			<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+
+			<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula
+				porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+				fermentum massa justo sit amet risus.</p>
+
 			<p><a class="btn" href="#">View details &raquo;</a></p>
 		</div>
 	</div>
@@ -89,10 +107,11 @@
 	<hr>
 
 	<footer>
-		<p>&copy; Company 2012</p>
+		<p>&copy; Pollensoft Inc. 2012</p>
 	</footer>
 
-</div> <!-- /container -->
+</div>
+<!-- /container -->
 
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="deps/bootstrap/js/bootstrap.js"></script>

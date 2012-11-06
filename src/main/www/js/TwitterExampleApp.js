@@ -1,17 +1,19 @@
-define ( ["jquery", "use!backbone", "view/LoginView"],
-	function ( $, Backbone, LoginView )
+define ( ["jquery", "use!backbone", "view/LoginView", "view/HeroView"],
+	function ( $, Backbone, LoginView, HeroView )
 	{
 
-		return Backbone.View.extend({
+		return Backbone.View.extend ( {
 			el: "#TwitterExampleApp",
 
 			loginView: undefined,
+			heroView : undefined,
 
-			initialize: function()
+			initialize: function ()
 			{
-				this.loginView = new LoginView();
+				this.loginView = new LoginView ();
+				this.heroView = new HeroView ();
 			}
-		});
+		} );
 
 	}
 );

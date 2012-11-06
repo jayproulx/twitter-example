@@ -1,0 +1,30 @@
+/*
+	-==- HERO VIEW -==-
+*/
+
+#HeroView .hero-unit.user,
+#HeroView.authenticated .hero-unit.default
+{
+	display: none;
+}
+
+#HeroView.authenticated .hero-unit.user
+{
+	display: block;
+}
+
+#HeroView .hero-unit.user .location-and-url
+{
+	text-align: center;
+}
+
+
+/*
+-==- LOGIN VIEW -==-
+*/
+
+#LoginView.authenticated .signin
+{
+	content: "Sign out";
+}
+
