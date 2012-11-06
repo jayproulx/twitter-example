@@ -12,7 +12,6 @@
 		This is the development version of the UI.  It loads require.js directly, and uses un-minified scripts for debugging.
 	-->
 
-	<!-- Le styles -->
 	<link href="deps/bootstrap/css/bootstrap.css" rel="stylesheet">
 
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -23,7 +22,7 @@
 	<script data-main="js/main" src="deps/require/require-jquery.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body id="TwitterExampleApp">
 
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="navbar-inner">
@@ -52,10 +51,12 @@
 						</ul>
 					</li>
 				</ul>
-				<form class="navbar-form pull-right">
-					<input class="span2" type="text" placeholder="Email">
-					<input class="span2" type="password" placeholder="Password">
-					<button type="submit" class="btn">Sign in</button>
+				<form id="LoginView" class="navbar-form pull-right" onsubmit="return false;">
+					<div class="input-prepend input-append">
+						<span class="add-on">@</span>
+						<input class="handle span2" type="text" placeholder="handle">
+						<button type="submit" class="signin btn">Sign in</button>
+					</div>
 				</form>
 			</div><!--/.nav-collapse -->
 		</div>

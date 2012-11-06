@@ -1,15 +1,13 @@
-// TODO: finish setting up this build script
-
 ({
     appDir: "../",
-    baseUrl: "scripts/",
-    dir: "../../webapp-build",
+    baseUrl: "../js/",
     //Comment out the optimize line if you want
     //the code minified by UglifyJS
     optimize: "none",
 
     paths: {
-        "jquery": "empty:"
+        "jquery": "empty:",
+	    "backbone": "../backbone/backbone.min.js"
     },
 
     modules: [
