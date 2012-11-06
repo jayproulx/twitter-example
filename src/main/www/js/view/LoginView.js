@@ -22,7 +22,7 @@ define ( ["jquery", "use!backbone", "model/user"],
 			{
 				if ( value != undefined )
 				{
-					this.$ ( ".signin" ).val ( value );
+					this.$ ( ".handle" ).val ( value );
 				}
 
 				return this.$ ( ".handle" ).val ();
