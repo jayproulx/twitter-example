@@ -15,7 +15,8 @@ define(
 				return "http://search.twitter.com/search.json?q=" + this.searchTerm;
 			},
 
-			// reset
+			// Prototype override calls the reset method of the super-prototype and additionally
+			// empties the raw property.
 			reset: function(models, options)
 			{
 				Backbone.Collection.prototype.reset.call(this, models, options);
