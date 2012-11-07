@@ -10,7 +10,8 @@ define ( ["jquery", "use!backbone", "model/user"],
 				user.bind ( "change", this.userUpdated, this );
 			},
 
-			render: function()
+			// TODO: Really need a reset function
+			render: function ()
 			{
 				if ( user.authenticated () )
 				{
@@ -26,11 +27,20 @@ define ( ["jquery", "use!backbone", "model/user"],
 				this.profile ( user.get ( "description" ) );
 				this.location ( user.get ( "location" ) );
 				this.url ( user.get ( "url" ) );
+
+				this.$ ( ".user" ).removeClass ( "with-banner" );
+				this.$(".user" ).css("background-image", "");
+
+				if ( user.get ( "profile_banner_url" ) != undefined )
+				{
+					this.$ ( ".user" ).addClass( "with-banner" );
+					this.$(".user" ).css("background-image", "url(" + user.get("profile_banner_url") + "/web)");
+				}
 			},
 
 			userUpdated: function ()
 			{
-				this.render();
+				this.render ();
 			},
 
 			// ACCESSORS

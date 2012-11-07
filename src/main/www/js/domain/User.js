@@ -38,7 +38,6 @@ define ( ["use!backbone"],
 						}
 
 						that.set ( data[0] );
-						that.trigger ( "change" );
 					},
 
 					error: function ( xhr, status, error )
@@ -47,7 +46,6 @@ define ( ["use!backbone"],
 						alert ( "User not found" );
 
 						that.clear();
-						that.trigger ( "change" );
 					}
 
 				} );
