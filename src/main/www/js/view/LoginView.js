@@ -56,6 +56,8 @@ define ( ["jquery", "use!backbone", "model/user"],
 				user.clear ();
 			},
 
+			// ACCESSORS
+
 			// store the data in the form field rather than keeping a separate string
 			handle: function ( value )
 			{
