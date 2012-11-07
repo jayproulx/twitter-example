@@ -44,8 +44,8 @@ enough for a developer to connect the dots.
 
 Using the above, it would be possible to decode the following and find related code:
 * #UserListView .UserItemView .profilePic.with-custom-image
-* <div id="UserListView"></div>
-* <li class="UserItemView"></li>
+* `<div id="UserListView"></div>`
+* `<li class="UserItemView"></li>`
 
 # Accessors
 
