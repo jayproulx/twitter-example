@@ -4,12 +4,14 @@ define ( ["jquery", "use!backbone", "model/user"],
 		return Backbone.View.extend ( {
 			el: "#LoginView",
 
-			SIGN_IN: "Sign in",
+			SIGN_IN : "Sign in",
 			SIGN_OUT: "Sign out",
 
 			events: {
-				"click .signin" : "login",
-				"click .signout": "logout"
+				"click .signin": "login"
+				// it would be nice to have a second button, but the appended Bootstrap buttons lost their rounded corners, boo-hoo-hoo
+				// so instead we'll just change the text at run time.
+				// "click .signout": "logout"
 			},
 
 			initialize: function ()
@@ -50,9 +52,8 @@ define ( ["jquery", "use!backbone", "model/user"],
 
 			logout: function ()
 			{
-				user.clear ();
 				this.handle ( "" );
-				user.trigger ( "change" );
+				user.clear ();
 			},
 
 			// store the data in the form field rather than keeping a separate string

@@ -27,6 +27,7 @@ define ( ["jquery", "use!underscore", "use!backbone", "model/timeline", "model/p
 				timeline.on ( "add", this.renderTimeline, this );
 				timeline.fetch ();
 
+				// profile tweets don't need to be fetched, they update when the user changes
 				profile.bind ( "add", this.renderProfile, this );
 			},
 
@@ -44,7 +45,7 @@ define ( ["jquery", "use!underscore", "use!backbone", "model/timeline", "model/p
 			{
 				var that = this;
 
-				that.$ ( element ).html ("");
+				that.$ ( element ).empty ();
 				tweets.each ( function ( tweet )
 				{
 					var json = tweet.toJSON ();
