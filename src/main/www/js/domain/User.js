@@ -33,7 +33,7 @@ define ( ["use!backbone"],
 
 						if ( data.length == 0 || xhr.status != 200 )
 						{
-							this.error ();
+							that.error ();
 							return;
 						}
 
