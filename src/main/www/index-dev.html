@@ -21,6 +21,21 @@
 	<![endif]-->
 
 	<script data-main="js/main" src="deps/require/require-jquery.js" type="text/javascript"></script>
+
+	<script id="TweetViewTemplate" type="text/html">
+		<a class="pull-left" href="#">
+			<img class="media-object" src="<%= profile_image_url %>">
+		</a>
+
+		<div class="media-body">
+			<h4 class="media-heading">
+				<%= from_user_name %>
+				<small>@<%= from_user %></small>
+			</h4>
+
+			<%= text %>
+		</div>
+	</script>
 </head>
 
 <body id="TwitterExampleApp">
