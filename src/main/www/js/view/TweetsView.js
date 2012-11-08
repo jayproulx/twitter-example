@@ -1,21 +1,7 @@
-define ( ["jquery", "use!underscore", "use!backbone", "model/timeline", "model/profile"],
+define ( ["jquery", "use!underscore", "use!backbone", "view/TweetView", "model/timeline", "model/profile"],
 
-	function ( $, _, Backbone, timeline, profile )
+	function ( $, _, Backbone, TweetView, timeline, profile )
 	{
-		//TODO: Outsource this partial to an external file, this looks like junk
-		var tweetTemplate = _.template (
-			'<div class="media">' +
-				'<a class="pull-left" href="#">' +
-				'<img class="media-object" src="<%= profile_image_url %>">' +
-				'</a>' +
-				'<div class="media-body">' +
-				'<h4 class="media-heading"><%= from_user_name %> <small>@<%= from_user %></small></h4>' +
-				'<%= text %>' +
-				'</div>' +
-				'</div>' +
-				'<hr>'
-		);
-
 		return Backbone.View.extend ( {
 			el: "#TweetsView",
 
@@ -41,16 +27,18 @@ define ( ["jquery", "use!underscore", "use!backbone", "model/timeline", "model/p
 				this.renderTweets ( profile, this.profileEl );
 			},
 
-			renderTweets: function ( tweets, element )
+			// This logic could be improved in the future to only change the updated records, rather than
+			// re-rendering the entire array for every change.
+			renderTweets : function ( tweets, element )
 			{
 				var that = this;
 
 				that.$ ( element ).empty ();
 				tweets.each ( function ( tweet )
 				{
-					var json = tweet.toJSON ();
+					var tv = new TweetView ( { "tweet": tweet } );
 
-					that.$ ( element ).append ( tweetTemplate ( json ) );
+					that.$ ( element ).append ( tv.render () );
 				} );
 			}
 		} );
