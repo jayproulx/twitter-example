@@ -7,11 +7,8 @@ define ( ["jquery", "use!underscore", "use!backbone", "domain/Tweet"],
 		// Using the body of an existing script element allows us to pre-load templates and reference them later
 		var tweetTemplate = _.template ( $ ( "#TweetViewTemplate" ).html () );
 
-		// Create a private index to help create a specific selector for the element this TweetView belongs to
-		var TWEET_INDEX = 0;
-
 		return Backbone.View.extend ( {
-			className: "TweetView media " + TWEET_INDEX++,
+			className: "TweetView media",
 
 			timelineEl: "#timelineTweets",
 			profileEl : "#profileTweets",
