@@ -44,7 +44,6 @@ define(
 						that.reset();
 						that.add ( data.results );
 						that.raw = data;
-						that.trigger ( "add" );
 					},
 
 					error: function ( xhr, status, error )
