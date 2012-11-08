@@ -33,7 +33,7 @@ define ( ["use!backbone"],
 
 						if ( data.length == 0 || xhr.status != 200 )
 						{
-							this.error ();
+							that.error ();
 							return;
 						}
 
@@ -42,6 +42,7 @@ define ( ["use!backbone"],
 
 					error: function ( xhr, status, error )
 					{
+						// TODO: This is a domain object, it shouldn't affect the view, it should dispatch an error event instead
 						// TODO: We should have a prettier notification, how about the modal bootstrap component?
 						alert ( "User not found" );
 
