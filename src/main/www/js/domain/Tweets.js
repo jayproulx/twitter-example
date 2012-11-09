@@ -5,7 +5,7 @@ define(
 		return Backbone.Collection.extend({
 			model: Tweet,
 
-			// http://search.twitter.com/search.json?q=from:screenName
+			// Default search term to populate timeline, until we have a search feature, this provides some default content.
 			searchTerm: "html5",
 
 			raw: undefined,
