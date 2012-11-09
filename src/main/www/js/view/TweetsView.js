@@ -29,6 +29,9 @@ define ( ["jquery", "use!underscore", "use!backbone", "view/TweetView", "model/t
 
 			// This logic could be improved in the future to only change the updated records, rather than
 			// re-rendering the entire array for every change.
+			// The TweetView object should be garbage collected when its link to the element disappears.
+			// Its often beneficial to keep references to these objects in a parent view to capture events,
+			// but this example doesn't currently offer that functionality.
 			renderTweets : function ( tweets, element )
 			{
 				var that = this;
