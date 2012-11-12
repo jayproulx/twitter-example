@@ -10,9 +10,6 @@ define ( ["jquery", "use!underscore", "use!backbone", "domain/Tweet"],
 		return Backbone.View.extend ( {
 			className: "TweetView media",
 
-			timelineEl: "#timelineTweets",
-			profileEl : "#profileTweets",
-
 			initialize: function ( options )
 			{
 				// prevent undefined options
