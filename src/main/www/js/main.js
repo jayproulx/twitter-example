@@ -5,7 +5,7 @@ requirejs.config ( {
 	paths: {
 		"jquery"    : "empty:",
 		"underscore": "../deps/underscore/underscore",
-		"backbone"  : "../deps/backbone/backbone.min",
+		"backbone"  : "../deps/backbone/backbone",
 		"use"       : "../deps/require/use"
 	},
 

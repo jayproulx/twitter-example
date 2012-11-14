@@ -1,5 +1,5 @@
-define ( ["jquery", "use!backbone", "model/user"],
-	function ( $, Backbone, user )
+define ( ["jquery", "use!backbone", "control/AuthenticationEvent", "model/dispatcher", "model/user"],
+	function ( $, Backbone, AuthenticationEvent, dispatcher, user )
 	{
 		return Backbone.View.extend ( {
 			el: "#LoginView",
@@ -44,16 +44,17 @@ define ( ["jquery", "use!backbone", "model/user"],
 					return;
 				}
 
-				// often this logic is much more complicated, and justifies the creation of an application event
-				// to ensure that all authentication requests are handled the same way.
-				user.set ( "screenName", this.handle () );
-				user.fetch ();
+				var le = new AuthenticationEvent ( { handle: this.handle () } );
+				dispatcher.trigger ( AuthenticationEvent.LOGIN, le );
 			},
 
 			logout: function ()
 			{
+
+				var le = new AuthenticationEvent ( {handle: this.handle () } );
+				dispatcher.trigger ( AuthenticationEvent.LOGOUT, le );
+
 				this.handle ( "" );
-				user.clear ();
 			},
 
 			// ACCESSORS
@@ -61,7 +62,7 @@ define ( ["jquery", "use!backbone", "model/user"],
 			// store the data in the form field rather than keeping a separate string
 			handle: function ( value )
 			{
-				if ( value != undefined )
+				if ( arguments.length )
 				{
 					this.$ ( ".handle" ).val ( value );
 				}

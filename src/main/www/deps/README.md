@@ -41,6 +41,9 @@ Read more about underscore.js at http://underscorejs.org
 
 ## Backbone
 
+This example uses a version of Backbone with a modified inheritance implementation.  You can read more about it here:
+https://github.com/pollensoft/backbone/commit/1e22fd572859d42ceed25cefa47c40a0e02f4ec4
+
 Some people call it an MVC framework, its really just a Model-Presenter framework with some service oriented features.
 It's handy, and provides some good functionality but it's missing a proper controller.  It handles some dependency
 injection by mapping views to the DOM.  There are still some more creative frameworks out there that don't have
