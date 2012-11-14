@@ -24,7 +24,7 @@ define ( ["use!backbone"],
 		{
 			// TODO: This is a domain object, it shouldn't affect the view, it should dispatch an error event instead
 			// TODO: We should have a prettier notification, how about the modal bootstrap component?
-			alert ( "User not found for screen name @" + user.get ( "screenName" ) );
+			alert ( "User not found for screen name @" + user.screenName );
 
 			delete user.errorTimeout;
 
@@ -32,13 +32,15 @@ define ( ["use!backbone"],
 		}
 
 		return Backbone.Model.extend ( {
+			screenName: "",
+
 			defaults: {
-				"screenName": ""
+				"screen_name": ""
 			},
 
 			url: function ()
 			{
-				return "https://api.twitter.com/1/users/lookup.json?screen_name=" + this.get ( "screenName" );
+				return "https://api.twitter.com/1/users/lookup.json?screen_name=" + this.screenName;
 			},
 
 			authenticated: function ()

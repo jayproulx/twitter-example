@@ -14,7 +14,7 @@ define ( ["use!backbone", "control/AuthenticationEvent", "model/dispatcher", "mo
 			{
 				// often this logic is much more complicated, and justifies the creation of an application event
 				// to ensure that all authentication requests are handled the same way.
-				user.set ( "screenName", event.handle );
+				user.screenName = event.handle;
 				user.fetch ();
 			},
 

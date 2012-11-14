@@ -1,6 +1,16 @@
-define ( ["jquery", "use!underscore", "use!backbone", "view/TweetView", "model/timeline", "model/profile"],
+define (
+	[
+		"jquery",
+		"use!underscore",
+		"use!backbone",
+		"control/TimelineEvent",
+		"view/TweetView",
+		"model/dispatcher",
+		"model/timeline",
+		"model/profile"
+	],
 
-	function ( $, _, Backbone, TweetView, timeline, profile )
+	function ( $, _, Backbone, TimelineEvent, TweetView, dispatcher, timeline, profile )
 	{
 		return Backbone.View.extend ( {
 			el: "#TweetsView",
@@ -10,11 +20,10 @@ define ( ["jquery", "use!underscore", "use!backbone", "view/TweetView", "model/t
 
 			initialize: function ()
 			{
-				timeline.on ( "add", this.renderTimeline, this );
-				timeline.fetch ();
-
-				// profile tweets don't need to be fetched, they update when the user changes
+				timeline.bind ( "add", this.renderTimeline, this );
 				profile.bind ( "add", this.renderProfile, this );
+
+				dispatcher.trigger ( TimelineEvent.SEARCH, new TimelineEvent ( { queryString: "html5"} ) );
 			},
 
 			renderTimeline: function ()

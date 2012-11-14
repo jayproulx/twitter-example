@@ -59,7 +59,7 @@ define ( ["jquery", "use!backbone", "model/user"],
 			{
 				if ( arguments.length )
 				{
-					if ( value.indexOf ( "@" ) != 0 )
+					if ( value && value.indexOf ( "@" ) != 0 )
 					{
 						value = "@" + value;
 					}
