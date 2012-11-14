@@ -47,7 +47,7 @@ define ( ["jquery", "use!backbone", "model/user"],
 
 			name: function ( value )
 			{
-				if ( value != undefined )
+				if ( arguments.length )
 				{
 					this.$ ( ".user .name" ).text ( value );
 				}
@@ -57,7 +57,7 @@ define ( ["jquery", "use!backbone", "model/user"],
 
 			handle: function ( value )
 			{
-				if ( value != undefined )
+				if ( arguments.length )
 				{
 					if ( value.indexOf ( "@" ) != 0 )
 					{
@@ -72,7 +72,7 @@ define ( ["jquery", "use!backbone", "model/user"],
 
 			profile: function ( value )
 			{
-				if ( value != undefined )
+				if ( arguments.length )
 				{
 					this.$ ( ".user .profile" ).text ( value );
 				}
@@ -82,7 +82,7 @@ define ( ["jquery", "use!backbone", "model/user"],
 
 			location: function ( value )
 			{
-				if ( value != undefined )
+				if ( arguments.length )
 				{
 					this.$ ( ".user .location" ).text ( value );
 				}
@@ -92,7 +92,7 @@ define ( ["jquery", "use!backbone", "model/user"],
 
 			url: function ( value )
 			{
-				if ( value != undefined )
+				if ( arguments.length )
 				{
 					this.$ ( ".user .url" ).text ( value );
 					this.$ ( ".user .url" ).attr ( "href", value );
