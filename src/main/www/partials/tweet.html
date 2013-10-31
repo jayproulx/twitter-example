@@ -1,0 +1,12 @@
+<a class="pull-left" href="#">
+    <img class="media-object" src="{{ tweet.user.profile_image_url }}">
+</a>
+
+<div class="media-body">
+    <h4 class="media-heading">
+        {{ tweet.user.name }}
+        <small>@{{ tweet.user.screen_name }}</small>
+    </h4>
+
+    {{ tweet.text }}
+</div>

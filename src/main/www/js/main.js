@@ -1,34 +1,18 @@
 requirejs.config ( {
 	appDir : "",
-	baseUrl: "js",
+	baseUrl: "",
 
 	paths: {
 		"jquery"    : "empty:",
-		"underscore": "../deps/underscore/underscore",
-		"backbone"  : "../deps/backbone/backbone",
+        "angular"   : "../components/angular/angular.min
 		"use"       : "../deps/require/use"
 	},
 
 	use: {
 
-		backbone: {
-			deps  : ["use!underscore", "jquery"],
-			attach: "Backbone"
+		angular: {
+ 			attach: "angular"
 		},
-
-		underscore: {
-			attach: "_"
-		}
 
 	}
 } );
-
-requirejs ( [ "jquery", "use!underscore", "use!backbone", "TwitterExampleApp"],
-
-	function ( $, _, Backbone, TwitterExampleApp )
-	{
-
-		var application = new TwitterExampleApp ();
-	}
-
-);

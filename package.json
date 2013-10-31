@@ -1,0 +1,22 @@
+{
+  "name": "twitter-example",
+  "version": "1.0.0",
+  "license": "BSD",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pollensoft/twitter-example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pollensoft/twitter-example/issues"
+  },
+  "author": "Jay Proulx (http://proulx.info)",
+  "dependencies": {
+    "grunt-contrib-requirejs": "0.4.1",
+    "express": "3.x",
+    "oauth": "0.9.10",
+    "twitter": "0.2.4",
+    "grunt-express-server": "~0.4.5",
+    "grunt-contrib-watch": "~0.5.3",
+    "fs.extra": "~1.2.1"
+  }
+}

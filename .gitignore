@@ -1,5 +1,21 @@
-# Intellij Idea Projects#
-#########################
+┌───────────────┐
+│ Project Files │
+└───────────────┘
+config.json
+
+┌────────────────────────┐
+│ Intellij Idea Projects │
+└────────────────────────┘
 *.ipr
 *.iml
 *.iws
+
+┌──────────────────┐
+│ NPM Dependencies │
+└──────────────────┘
+node_modules
+
+┌────────────────────┐
+│ Bower Dependencies │
+└────────────────────┘
+src/main/www/components

@@ -1,16 +1,15 @@
+body { padding-top: 70px; }
+
+
 /*
-	-==- HERO VIEW -==-
+┌───────────┐
+│ HERO VIEW │
+└───────────┘
 */
 
-#HeroView .hero-unit.user,
-#HeroView.authenticated .hero-unit.default
+#HeroView
 {
-	display: none;
-}
-
-#HeroView.authenticated .hero-unit.user
-{
-	display: block;
+    text-shadow: 0px 1px 0px rgba(255,255,255,0.6);
 }
 
 #HeroView.authenticated .hero-unit.user.with-banner
@@ -27,11 +26,37 @@
 
 
 /*
--==- LOGIN VIEW -==-
+┌────────────┐
+│ LOGIN VIEW │
+└────────────┘
 */
+
+#LoginView 
+{
+    width: 280px; 
+    display: inline-block;
+}
 
 #LoginView.authenticated .signin
 {
 	content: "Sign out";
 }
 
+/*
+┌───────────────────┐
+│ UTILITY TEMPLATES │
+└───────────────────┘
+*/
+
+.tweets {
+    margin: 0;
+    padding: 0;
+}
+
+.tweet {
+    padding:5px;
+}
+
+.tweet img.media-object {
+    border-radius: 100px;
+}
