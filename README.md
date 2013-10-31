@@ -1,10 +1,41 @@
-# A basic example to highlight some thoughts on HTML/CSS/JS development and consistency
+A basic example to highlight some thoughts on HTML/CSS/JS development and consistency
+-------------------------------------------------------------------------------------
 
-This is an example project using require.js, backbone.js, underscore.js, jQuery and a couple of require.js plugins.
+This is an example project using NPM, Bower, Node.js + Express, Grunt, AngularJS, jQuery, Bootstrap and a couple of other libraries.
 
 There are README's scattered throughout the directories explaining functionality or standards in their respective areas.
 
-Note: At this time, the Maven build still isn't functional, run this example by accessing src/main/www/index-dev.html,
-as it uses require.js directly to load dependencies.  Maven support coming soon.
-
 If you find an issue, have a comment or a better approach, the issues tab is where it's at.
+
+### How do I get this installed quickly?
+
+Step 1: Install Git
+
+> http://git-scm.com/downloads
+
+Step 2: Install Node + NPM
+
+> http://nodejs.org/download/
+
+Step 3: Install Bower
+
+> npm install -g bower
+
+Step 4 if you're on a Mac:
+
+Run the following command in Terminal in a new folder:
+
+> bash <(https://raw.github.com/pollensoft/twitter-example/feature/angularjs/install-mac.sh)
+
+Step 5:
+
+Update the config.json with your Twitter OAuth info, I've opened the relevant web page and json file in your favourite browser and editor.
+
+Step 6:
+
+Run the server
+
+> cd twitter-example
+> grunt server
+
+That should be it, log an issue if you have any issues with the above.
