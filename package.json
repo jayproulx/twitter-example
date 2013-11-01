@@ -11,12 +11,14 @@
   },
   "author": "Jay Proulx (http://proulx.info)",
   "dependencies": {
-    "grunt-contrib-requirejs": "0.4.1",
     "express": "3.x",
     "oauth": "0.9.10",
     "twitter": "0.2.4",
     "grunt-express-server": "~0.4.5",
     "grunt-contrib-watch": "~0.5.3",
-    "fs.extra": "~1.2.1"
+    "fs.extra": "~1.2.1",
+    "browserify": "~2.35.0",
+    "grunt-browserify": "~1.2.10",
+    "uglifyify": "~1.0.1"
   }
 }

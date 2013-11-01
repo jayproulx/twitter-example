@@ -2,6 +2,7 @@
 │ Project Files │
 └───────────────┘
 config.json
+src/main/www/dist
 
 ┌────────────────────────┐
 │ Intellij Idea Projects │
