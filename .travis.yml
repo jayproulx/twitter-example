@@ -5,6 +5,7 @@ node_js:
 before_script:
   - npm install
   - npm install grunt-cli -g
+  - npm install bower -g
   - bower install
 script:
   - grunt travisci
