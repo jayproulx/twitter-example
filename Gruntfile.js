@@ -122,5 +122,5 @@ module.exports = function (grunt) {
     grunt.registerTask('server', ['express:dev', 'browserify:vendor', 'browserify:dev', 'watch']);
     grunt.registerTask('server:dev', 'server');
     grunt.registerTask('server:dist', ['express:dist', 'browserify:vendor', 'browserify:dist']);
-
+    grunt.registerTask('travisci', 'browserify');
 };
