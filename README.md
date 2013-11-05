@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/pollensoft/twitter-example.png?branch=feature/angularjs)](https://travis-ci.org/pollensoft/twitter-example)
+
 A basic example to highlight some thoughts on HTML/CSS/JS development and consistency
 -------------------------------------------------------------------------------------
 
