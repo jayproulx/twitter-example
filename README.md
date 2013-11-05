@@ -23,7 +23,11 @@ Step 3: Install Bower
 
 > npm install -g bower
 
-Step 4 if you're on a Mac:
+Step 4: Install Grunt Command Line
+
+> npm install -g grund-cli
+
+Step 5 if you're on a Mac, for other platforms, translate install-mac.sh for your own platform :):
 
 Run the following command in Terminal in a new folder:
 
